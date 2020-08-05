@@ -14,15 +14,17 @@ export default () => {
       <Banner heading1="Our undergraduate" heading2="Programs" />
       <WallOfText headingText="OUR BACHELOR PROGRAMS" />
       <MainFeature1
-        subheading={<Subheading>About our insitute</Subheading>}
-        heading="We are a modern team of young reaschers."
+        subheading={<Subheading>bachelor programs</Subheading>}
+        heading="Bachelor programs fullname here"
         buttonRounded={false}
         primaryButtonText="Learn more"
+        primaryButtonUrl="/article"
         imageSrc="https://images.unsplash.com/photo-1546953304-5d96f43c2e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80"
       />
       <MainFeature1
-        subheading={<Subheading>Our Vision</Subheading>}
-        heading="We aim to excel in research and development."
+        subheading={<Subheading>bachelor programs</Subheading>}
+        heading="Bachelor programs fullname here"
+        primaryButtonUrl="/article"
         buttonRounded={false}
         primaryButtonText="Learn more "
         imageSrc="https://images.unsplash.com/photo-1550867428-138aec9fce23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"

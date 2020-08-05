@@ -17,10 +17,11 @@ export default () => {
           </>
         }
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        imageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
+        imageSrc="https://cdn.pixabay.com/photo/2016/08/16/09/53/international-conference-1597531_960_720.jpg"
         imageCss={imageCss}
         imageDecoratorBlob={true}
         primaryButtonText="Register"
+        primaryButtonUrl="#form"
         watchVideoButtonText="Have a look"
       />
 

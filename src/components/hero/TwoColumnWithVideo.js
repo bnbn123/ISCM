@@ -62,7 +62,7 @@ export default ({
   primaryButtonText = "Get Started",
   primaryButtonUrl = "#",
   watchVideoButtonText = "Watch Video",
-  watchVideoYoutubeUrl = "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  watchVideoYoutubeUrl = "https://www.youtube.com/embed/YlGpTKWAibY",
   imageSrc = DesignIllustration,
   imageCss = null,
   imageDecoratorBlob = false,

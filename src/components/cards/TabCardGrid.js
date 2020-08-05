@@ -6,7 +6,7 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-
+import { Link } from "react-router-dom";
 import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
 import ResponsiveModalContent from "../../helpers/ResponsiveModalContent.js";
 
@@ -319,6 +319,171 @@ const TABS = {
       url: " ",
     },
   ],
+  studiolab: [
+    {
+      imageSrc:
+        "https://cdn.pixabay.com/photo/2015/05/15/14/22/conference-room-768441_960_720.jpg",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2866.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2867.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2869.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2871.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2873.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2874.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2876.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2877.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2879.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2881.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2885.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2886.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2887.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2890.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2891.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2892.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+    {
+      imageSrc: "src/images/studiolab/_MG_2894.JPG",
+      title: "Events",
+      content: "Some random events",
+      price: "$5.99",
+      rating: "5.0",
+      reviews: "87",
+      url: " ",
+    },
+  ],
 };
 
 export default ({
@@ -395,7 +560,9 @@ export default ({
                       }}
                       transition={{ duration: 0.3 }}
                     >
-                      <CardButton>Read more</CardButton>
+                      <Link to="/article">
+                        <CardButton>Read more</CardButton>
+                      </Link>
                     </CardHoverOverlay>
                   </CardImageContainer>
                   <CardText>

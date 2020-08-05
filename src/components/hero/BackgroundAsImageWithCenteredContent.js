@@ -1,6 +1,7 @@
 import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { css } from "styled-components/macro"; //eslint-disable-line
 
 const Container = styled.div`
@@ -33,7 +34,9 @@ export default () => {
             <br />
             And Management
           </Heading>
-          <PrimaryAction>See Our Programs</PrimaryAction>
+          <Link to="/education">
+            <PrimaryAction>See Our Programs</PrimaryAction>
+          </Link>
         </Content>
       </HeroContainer>
     </Container>

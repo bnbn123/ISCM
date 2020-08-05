@@ -11,10 +11,12 @@ const Heading = tw(SectionHeading)`text-left lg:text-4xl xl:text-5xl`;
 
 const PopularPostsContainer = tw.div`lg:w-2/3`;
 const PostsContainer = tw.div`mt-12 flex flex-col sm:flex-row sm:justify-between lg:justify-start`;
-const Post = tw(motion.a)`block sm:max-w-sm cursor-pointer mb-16 last:mb-0 sm:mb-0 sm:odd:mr-8 lg:mr-8 xl:mr-16`;
-const Image = styled(motion.div)(props => [
+const Post = tw(
+  motion.a
+)`block sm:max-w-sm cursor-pointer mb-16 last:mb-0 sm:mb-0 sm:odd:mr-8 lg:mr-8 xl:mr-16`;
+const Image = styled(motion.div)((props) => [
   `background-image: url("${props.imageSrc}");`,
-  tw`h-64 bg-cover bg-center rounded`
+  tw`h-64 bg-cover bg-center rounded`,
 ]);
 const Title = tw.h5`mt-6 text-xl font-bold transition duration-300 group-hover:text-primary-500`;
 const Description = tw.p`mt-2 font-medium text-secondary-100 leading-loose text-sm`;
@@ -42,17 +44,17 @@ const RecentPostsContainer = styled.div`
     ${tw`h-20 w-20 flex-shrink-0`}
   }
 `;
-const PostTextContainer = tw.div``
+const PostTextContainer = tw.div``;
 
 export default () => {
   // This setting is for animating the post background image on hover
   const postBackgroundSizeAnimation = {
     rest: {
-      backgroundSize: "100%"
+      backgroundSize: "100%",
     },
     hover: {
-      backgroundSize: "110%"
-    }
+      backgroundSize: "110%",
+    },
   };
 
   //Recommended: Only 2 Items
@@ -67,7 +69,7 @@ export default () => {
         "Lorem ipsum dolor sit amet, consecteturious adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua now ele.",
       authorName: "Charlotte Delos",
       authorProfile: "A random sleep deprived person",
-      url: "https://timerse.com"
+      url: "https://timerse.com",
     },
     {
       postImageSrc:
@@ -79,8 +81,8 @@ export default () => {
         "Lorem ipsum dolor sit amet, consecteturious adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua now ele.",
       authorName: "Adam Cuppy",
       authorProfile: "Merciless dictator of a foreign country",
-      url: "https://reddit.com"
-    }
+      url: "https://reddit.com",
+    },
   ];
 
   const recentPosts = [
@@ -89,37 +91,37 @@ export default () => {
         "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "Getting the most out of your time in class",
       authorName: "Aaron Patterson",
-      url: "https://reddit.com"
+      url: "https://reddit.com",
     },
     {
       postImageSrc:
         "https://images.unsplash.com/photo-1515163842884-3c780ba91d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
       title: "Choosing the perfect major",
       authorName: "Sam Phipphen",
-      url: "https://reddit.com"
+      url: "https://reddit.com",
     },
     {
       postImageSrc:
         "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80",
       title: "Travelling to relieve stress",
       authorName: "Tony Hawk",
-      url: "https://timerse.com"
+      url: "https://timerse.com",
     },
     {
       postImageSrc:
         "https://images.unsplash.com/photo-1478104718532-efe04cc3ff7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80",
       title: "Must have recourses while getting your masters",
       authorName: "Himali Turn",
-      url: "https://timerse.com"
+      url: "https://timerse.com",
     },
     {
       postImageSrc:
         "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "An extremely fun seminar on directions to smart city",
       authorName: "Naomi Watts",
-      url: "https://timerse.com"
+      url: "https://timerse.com",
     },
-  ]
+  ];
 
   return (
     <Container>
@@ -129,7 +131,14 @@ export default () => {
             <Heading>Popular Events</Heading>
             <PostsContainer>
               {popularPosts.map((post, index) => (
-                <Post key={index} href={post.url} className="group" initial="rest" whileHover="hover" animate="rest">
+                <Post
+                  key={index}
+                  href="/article"
+                  className="group"
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                >
                   <Image
                     transition={{ duration: 0.3 }}
                     variants={postBackgroundSizeAnimation}
@@ -152,13 +161,13 @@ export default () => {
             <Heading>Recent Events</Heading>
             <PostsContainer>
               {recentPosts.map((post, index) => (
-              <Post key={index} href={post.url} className="group">
-                <PostTextContainer>
-                  <Title>{post.title}</Title>
-                  <AuthorName>{post.authorName}</AuthorName>
-                </PostTextContainer>
-                <Image imageSrc={post.postImageSrc} />
-              </Post>
+                <Post key={index} href="/article" className="group">
+                  <PostTextContainer>
+                    <Title>{post.title}</Title>
+                    <AuthorName>{post.authorName}</AuthorName>
+                  </PostTextContainer>
+                  <Image imageSrc={post.postImageSrc} />
+                </Post>
               ))}
             </PostsContainer>
           </RecentPostsContainer>

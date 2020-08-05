@@ -79,7 +79,7 @@ export default ({
           <NavDropdownContent href="shortcourses">
             Short-courses
           </NavDropdownContent>
-          <NavDropdownContent href="education">Admission</NavDropdownContent>
+          <NavDropdownContent href="#form">Admission</NavDropdownContent>
         </Dropdown3>
       </NavLink>
     </NavLinks>,

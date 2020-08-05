@@ -14,18 +14,20 @@ export default () => {
       <Banner heading1="Our PHD/MASTERS" heading2="Programs" />
       <WallOfText headingText="OUR PHD/MASTERS PROGRAMS" />
       <MainFeature1
-        subheading={<Subheading>About our insitute</Subheading>}
-        heading="We are a modern team of young reaschers."
+        subheading={<Subheading>PHD/MASTER PROGRAMS</Subheading>}
+        heading="THIS IS THE FULLNAME FOR PROGRAMS"
+        primaryButtonUrl="/article"
         buttonRounded={false}
         primaryButtonText="Learn more"
-        imageSrc="https://images.unsplash.com/photo-1507486673731-8e2cb2d8f106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80"
+        imageSrc="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
       />
       <MainFeature1
-        subheading={<Subheading>Our Vision</Subheading>}
-        heading="We aim to excel in research and development."
+        subheading={<Subheading>PHD/MASTER PROGRAMS</Subheading>}
+        heading="THIS IS THE FULLNAME FOR PROGRAMS"
+        primaryButtonUrl="/article"
         buttonRounded={false}
         primaryButtonText="Learn more "
-        imageSrc="https://images.unsplash.com/photo-1503844912657-8f60404b429f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80"
+        imageSrc="https://images.unsplash.com/photo-1496469888073-80de7e952517?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"
       />
     </AnimationRevealPage>
   );

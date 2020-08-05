@@ -22,6 +22,8 @@ import CollabPage from "pages/Collaborators";
 import Undergrads from "pages/Undergrads";
 import Postgrads from "pages/Postgrads";
 import Shortcourses from "pages/Shortcourses";
+import Article from "pages/Article";
+import ScrollToTop from "components/misc/ScrollTop";
 
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
@@ -29,6 +31,7 @@ export default function App() {
     <div className="div">
       <Header />
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <HOMEPAGE />
@@ -65,6 +68,9 @@ export default function App() {
           </Route>
           <Route exact path="/shortcourses">
             <Shortcourses />
+          </Route>
+          <Route path="/article">
+            <Article />
           </Route>
         </Switch>
       </Router>

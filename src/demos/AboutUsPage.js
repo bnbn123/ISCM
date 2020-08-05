@@ -23,15 +23,17 @@ export default () => {
         subheading={<Subheading>About our insitute</Subheading>}
         heading="We are a modern team of young reaschers."
         buttonRounded={false}
-        primaryButtonText="Projects"
-        imageSrc="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=768&q=80"
+        primaryButtonText="Meet The Team"
+        primaryButtonUrl="/people"
+        imageSrc="https://cdn.pixabay.com/photo/2015/01/09/11/09/startup-594091_960_720.jpg"
       />
       <MainFeature1
         subheading={<Subheading>Our Vision</Subheading>}
         heading="We aim to excel in research and development."
         buttonRounded={false}
-        primaryButtonText="Our "
-        imageSrc="https://images.unsplash.com/3/doctype-hi-res.jpg?ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
+        primaryButtonText="Our Projects"
+        primaryButtonUrl="/research-development"
+        imageSrc="https://cdn.pixabay.com/photo/2016/11/29/09/32/concept-1868728_960_720.jpg"
         textOnLeft={false}
       />
       <WallOfText />
@@ -44,22 +46,24 @@ export default () => {
           {
             imageSrc: UniversitiesIconImage,
             title: "Universities",
-            description: "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport"
+            description:
+              "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport",
           },
           {
             imageSrc: CompaniesIconImage,
             title: "Companies",
-            description: "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport"
+            description:
+              "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport",
           },
           {
             imageSrc: CommunityLoveIconImage,
             title: "Community",
-            description: "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport"
+            description:
+              "Lorem ipsum donor amet siti ceali placeholder text alipiscing elit sed do eiusmod temport",
           },
         ]}
         linkText=""
       />
-
     </AnimationRevealPage>
   );
 };

@@ -14,19 +14,21 @@ export default () => {
       <Banner heading1="Our Short" heading2="Courses" />
       <WallOfText headingText="Short cources you can learn in a few weeks" />
       <MainFeature1
-        subheading={<Subheading>About our insitute</Subheading>}
-        heading="We are a modern team of young reaschers."
+        subheading={<Subheading>Short-limited time course</Subheading>}
+        heading="THIS IS THE FULLNAME OF THE COURSE"
         buttonRounded={false}
+        primaryButtonUrl="/article"
         primaryButtonText="Learn more"
-        imageSrc="https://images.unsplash.com/photo-1507486673731-8e2cb2d8f106?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1498&q=80"
+        imageSrc="https://images.unsplash.com/photo-1550202256-47e53ffabc95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
         textOnLeft={false}
       />
       <MainFeature1
-        subheading={<Subheading>Our Vision</Subheading>}
-        heading="We aim to excel in research and development."
+        subheading={<Subheading>Short-limited time course</Subheading>}
+        heading="THIS IS THE FULLNAME OF THE COURSE"
         buttonRounded={false}
+        primaryButtonUrl="/article"
         primaryButtonText="Learn more"
-        imageSrc="https://images.unsplash.com/photo-1503844912657-8f60404b429f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1490&q=80"
+        imageSrc="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
         textOnLeft={false}
       />
     </AnimationRevealPage>

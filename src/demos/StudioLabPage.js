@@ -20,7 +20,7 @@ export default function StudioLabPage() {
       <TabGrid
         heading={
           <>
-            Checkout our <HighlightedText>LABS</HighlightedText>
+            And our <HighlightedText>LABS</HighlightedText>
           </>
         }
       />
