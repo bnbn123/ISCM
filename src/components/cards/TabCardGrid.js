@@ -546,25 +546,25 @@ export default ({
                   whileHover="hover"
                   animate="rest"
                 >
-                  <CardImageContainer imageSrc={card.imageSrc}>
-                    <CardHoverOverlay
-                      variants={{
-                        hover: {
-                          opacity: 1,
-                          height: "auto",
-                        },
-                        rest: {
-                          opacity: 0,
-                          height: 0,
-                        },
-                      }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <Link to="/article">
+                  <Link to="/article">
+                    <CardImageContainer imageSrc={card.imageSrc}>
+                      <CardHoverOverlay
+                        variants={{
+                          hover: {
+                            opacity: 1,
+                            height: "auto",
+                          },
+                          rest: {
+                            opacity: 0,
+                            height: 0,
+                          },
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
                         <CardButton>Read more</CardButton>
-                      </Link>
-                    </CardHoverOverlay>
-                  </CardImageContainer>
+                      </CardHoverOverlay>
+                    </CardImageContainer>
+                  </Link>
                   <CardText>
                     <CardTitle>{card.title}</CardTitle>
                     <CardContent>{card.content}</CardContent>

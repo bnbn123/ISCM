@@ -9,7 +9,7 @@ export default function StudioLabPage() {
   const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   return (
     <AnimationRevealPage>
-      <Hero heading1="Our Studio" heading2="Labs" />
+      <Hero heading1="Our Studio" heading2="and Labs" />
       <TabGrid
         heading={
           <>

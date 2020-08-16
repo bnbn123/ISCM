@@ -14,22 +14,22 @@ import UniversitiesIconImage from "images/university.svg";
 import CompaniesIconImage from "images/company.svg";
 import CommunityLoveIconImage from "images/community.svg";
 
-const Subheading = tw.span`uppercase tracking-wider text-sm`;
+const Subheading = tw.span`uppercase tracking-wider`;
 export default () => {
   return (
     <AnimationRevealPage>
-      <Banner heading1="Who Are We?" heading2="About Out Insitute" />
+      <Banner heading1="Who Are We?" heading2="About Our Insitute" />
       <MainFeature1
-        subheading={<Subheading>About our insitute</Subheading>}
-        heading="We are a modern team of young reaschers."
+        heading="About Our Insitute."
+        subheading="We are a modern team of young reaschers."
         buttonRounded={false}
         primaryButtonText="Meet The Team"
         primaryButtonUrl="/people"
         imageSrc="https://cdn.pixabay.com/photo/2015/01/09/11/09/startup-594091_960_720.jpg"
       />
       <MainFeature1
-        subheading={<Subheading>Our Vision</Subheading>}
-        heading="We aim to excel in research and development."
+        heading="Our Vision."
+        subheading="We aim to excel in research and development."
         buttonRounded={false}
         primaryButtonText="Our Projects"
         primaryButtonUrl="/research-development"
