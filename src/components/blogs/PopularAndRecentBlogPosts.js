@@ -80,7 +80,7 @@ export default () => {
       description:
         "Lorem ipsum dolor sit amet, consecteturious adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua now ele.",
       authorName: "Adam Cuppy",
-      authorProfile: "Merciless dictator of a foreign country",
+      authorProfile: "Another sleep deprived person but male",
       url: "https://reddit.com",
     },
   ];
