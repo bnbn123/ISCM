@@ -1,6 +1,6 @@
 import React from "react";
-import tw from "twin.macro";
-import { css } from "styled-components/macro"; //eslint-disable-line
+//import tw from "twin.macro";
+//import { css } from "styled-components/macro"; //eslint-disable-line
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import WallOfText from "components/blogs/Paragraphs.js";
 import { EducationPrograms as Blogposts } from "components/blogs/BlogIndex.js";

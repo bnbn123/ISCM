@@ -42,7 +42,7 @@ const CardImage = styled.div((props) => [
 
 const TextInfo = tw.div`flex-grow sm:px-10 sm:py-4`;
 
-const TitleReviewContainer = tw.div`flex flex-col sm:flex-row sm:justify-between sm:items-center h-1/4 overflow-hidden`;
+//const TitleReviewContainer = tw.div`flex flex-col sm:flex-row sm:justify-between sm:items-center h-1/4 overflow-hidden`;
 const Title = tw.h5`block text-2xl font-bold h-1/4 overflow-hidden`;
 //================================================================================
 const SecondaryInfoContainer = tw.div`flex flex-col sm:flex-row mt-2`;

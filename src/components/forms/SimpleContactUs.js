@@ -44,7 +44,8 @@ export default () => {
         <FormContainer>
           <div tw="mx-auto max-w-4xl">
             <h2>Register for our programs</h2>
-            <form action="#">
+            <form action="#" name="contact">
+              <input type="hidden" name="form-name" value="contact" />
               <TwoColumn>
                 <Column>
                   <InputContainer>
@@ -68,11 +69,11 @@ export default () => {
                 </Column>
                 <Column>
                   <InputContainer tw="flex-1">
-                    <Label htmlFor="name-input">Your Message</Label>
+                    <Label htmlFor="name-input">Your Introduction</Label>
                     <TextArea
                       id="message-input"
                       name="message"
-                      placeholder="E.g. Details about your event"
+                      placeholder="E.g. Details about yourself"
                     />
                   </InputContainer>
                 </Column>
