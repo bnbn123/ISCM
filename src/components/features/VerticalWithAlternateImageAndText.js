@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import Markdown from "react-markdown";
 //import { css } from "styled-components/macro";
 import tw from "twin.macro";
 import { ReactComponent as SvgDotPatternIcon } from "../../images/dot-pattern.svg";
 import { SectionHeading as HeadingTitle } from "../misc/Headings.js";
-import WallOfText from "components/blogs/Paragraphs";
+// import WallOfText from "components/blogs/Paragraphs";
 
 const Container = tw.div`relative`;
 
@@ -15,8 +16,33 @@ const HeadingDescription = tw.p`mt-4 font-medium text-gray-600 text-center max-w
 
 const Content = styled.div(({ withflex }) => [
   tw`mt-16`,
-  withflex ? tw`flex flex-row` : "",
+  withflex ? tw`flex flex-col justify-center items-center` : "",
 ]);
+
+const Text = styled.div`
+  ${tw`text-lg  text-gray-800`}
+  p {
+    ${tw`mt-2 mb-2 leading-loose`}
+  }
+  h1 {
+    ${tw`text-3xl font-bold mt-10`}
+  }
+  h2 {
+    ${tw`text-2xl font-bold mt-8`}
+  }
+  h3 {
+    ${tw`text-xl font-bold mt-6`}
+  }
+  ul {
+    ${tw`list-disc list-inside`}
+    li {
+      ${tw`ml-2 mb-3`}
+      p {
+        ${tw`mt-0 inline leading-normal`}
+      }
+    }
+  }
+`;
 
 const Card = styled.div((props) => [
   tw`mt-24 md:flex justify-center items-center w-1/2`,
@@ -124,43 +150,21 @@ export default ({
   );
 };
 
-export const customFeature = ({
-  heading = "Here are Our sponsors and friends",
-  headingtitle = "Our Friends and Sponsors",
-}) => {
-  const cards = [
-    {
-      imageSrc:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
-      subtitle: "School",
-      title: "Second section ",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      url: "https://www.ueh.edu.vn/",
-    },
-  ];
-
+export const articlePost = ({ ...post }) => {
   return (
     <Container>
       <SingleColumn>
         <HeadingInfoContainer>
-          <HeadingTitle>{headingtitle}</HeadingTitle>
-          <HeadingDescription>{heading}</HeadingDescription>
+          <HeadingTitle>{post.title}</HeadingTitle>
+          <HeadingDescription>
+            Published on {post.date} by {post.author}
+          </HeadingDescription>
         </HeadingInfoContainer>
 
         <Content>
-          <WallOfText headingText="First section" />
-          {cards.map((card, i) => (
-            <Card key={i} reversed>
-              <Image imageSrc={card.imageSrc} />
-              <Details>
-                <Subtitle>{card.subtitle}</Subtitle>
-                <Title>{card.title}</Title>
-                <Description>{card.description}</Description>
-              </Details>
-            </Card>
-          ))}
-          <WallOfText headingText="Third section" />
+          <Text>
+            <Markdown source={post.content} escapeHtml={false} />
+          </Text>
         </Content>
       </SingleColumn>
       <SvgDotPattern1 />

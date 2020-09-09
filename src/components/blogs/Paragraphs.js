@@ -31,7 +31,7 @@ const Text = styled.div`
     }
   }
 `;
-export default ({ headingText = "Our Mission" }) => {
+export default ({ headingText = "Our Mission", textContent = " " }) => {
   return (
     <AnimationRevealPage>
       <Container>

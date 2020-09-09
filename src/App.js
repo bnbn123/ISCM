@@ -24,13 +24,14 @@ import Postgrads from "pages/Postgrads";
 import Shortcourses from "pages/Shortcourses";
 import Article from "pages/Article";
 import ScrollToTop from "components/misc/ScrollTop";
+import Notfound from "pages/Notfound.js";
 
 export default function App() {
   // return <AnimationRevealPage disabled></AnimationRevealPage>;
   return (
     <div className="div">
-      <Header />
       <Router>
+        <Header />
         <ScrollToTop />
         <Switch>
           <Route exact path="/">
@@ -69,13 +70,18 @@ export default function App() {
           <Route exact path="/shortcourses">
             <Shortcourses />
           </Route>
-          <Route path="/article">
-            <Article />
+          <Route exact path="/404">
+            <Notfound />
           </Route>
+          <Route
+            exact
+            path="/article/:id"
+            render={(props) => <Article {...props} />}
+          ></Route>
         </Switch>
+        <ContactForm />
+        <Footer />
       </Router>
-      <ContactForm />
-      <Footer />
     </div>
   );
 }

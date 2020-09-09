@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+//markdown
+// import Markdown from "react-markdown";
+import postlist from "../../posts.json";
+//styling
 import { motion } from "framer-motion";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
+//Styling
+//Router
+import { Link } from "react-router-dom";
+// Component
 import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
 import { SectionHeading } from "components/misc/Headings.js";
 import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
-import { Link } from "react-router-dom";
 import ReactModalAdapter from "../../helpers/ReactModalAdapter.js";
 import ResponsiveModalContent from "../../helpers/ResponsiveModalContent.js";
-
 import { ReactComponent as CloseIcon } from "feather-icons/dist/icons/x.svg";
 import { ReactComponent as SvgDecoratorBlob1 } from "images/svg-decorator-blob-5.svg";
 import { ReactComponent as SvgDecoratorBlob2 } from "images/svg-decorator-blob-7.svg";
@@ -31,13 +37,17 @@ const TabControl = styled.div`
 
 const TabContent = tw(
   motion.div
-)`mt-6 flex flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
-const CardContainer = tw.div`mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
+)`mt-6 flex sm:h-9/12 flex-wrap sm:-mr-10 md:-mr-6 lg:-mr-12`;
+
+const CardContainer = tw.div`flex mt-10 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 sm:pr-10 md:pr-6 lg:pr-12`;
 const Card = tw(
-  motion.a
-)`bg-gray-200 rounded-b block max-w-xs mx-auto sm:max-w-none sm:mx-0`;
+  motion.div
+)`flex-grow flex flex-col bg-gray-200 rounded-b max-w-xs mx-auto sm:max-w-none sm:mx-0`;
 const CardImageContainer = styled.div`
-  ${(props) => css`background-image: url("${props.imageSrc}");`}
+  ${(props) =>
+    css`
+      background-image: url("${props.thumbnail}");
+    `}
   ${tw`h-56 xl:h-64 bg-center bg-cover relative rounded-t`}
 `;
 
@@ -47,9 +57,9 @@ const CardHoverOverlay = styled(motion.div)`
 `;
 const CardButton = tw(PrimaryButtonBase)`text-base`;
 
-const CardText = tw.div`p-4 text-gray-900`;
-const CardTitle = tw.h5`text-lg font-semibold group-hover:text-primary-500`;
-const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
+const CardText = tw.div`flex-grow p-4 text-gray-900`;
+const CardTitle = tw.h5`lg:h-1/2 text-lg font-semibold group-hover:text-primary-500`;
+// const CardContent = tw.p`mt-1 text-sm font-medium text-gray-600`;
 
 const DecoratorBlob1 = styled(SvgDecoratorBlob1)`
   ${tw`pointer-events-none -z-20 absolute right-0 top-0 h-64 w-64 opacity-15 transform translate-x-2/3 -translate-y-12 text-pink-400`}
@@ -77,7 +87,7 @@ const CloseModalButton = tw.button`absolute top-0 right-0 mt-8 mr-8 hocus:text-p
 const TABS = {
   News: [
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -87,7 +97,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -97,7 +107,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -107,7 +117,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1515163842884-3c780ba91d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -117,7 +127,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -127,7 +137,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1478104718532-efe04cc3ff7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -137,7 +147,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -147,7 +157,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1576&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -157,7 +167,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -167,7 +177,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -177,7 +187,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -187,7 +197,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1515163842884-3c780ba91d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
       title: "News",
       content: "Some Random piece of news",
@@ -199,7 +209,7 @@ const TABS = {
   ],
   Events: [
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "Events",
       content: "Some random events",
@@ -209,7 +219,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       title: "Events",
       content: "Some random events",
@@ -219,7 +229,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "Events",
       content: "Some random events",
@@ -229,7 +239,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1515163842884-3c780ba91d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
       title: "Events",
       content: "Some random events",
@@ -239,7 +249,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80",
       title: "Events",
       content: "Some random events",
@@ -249,7 +259,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1478104718532-efe04cc3ff7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1510&q=80",
       title: "Events",
       content: "Some random events",
@@ -259,7 +269,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "Events",
       content: "Some random events",
@@ -269,7 +279,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1557428894-56bcc97113fe?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1576&q=80",
       title: "Events",
       content: "Some random events",
@@ -279,7 +289,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "Events",
       content: "Some random events",
@@ -289,7 +299,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1565689157206-0fddef7589a2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
       title: "Events",
       content: "Some random events",
@@ -299,7 +309,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
       title: "Events",
       content: "Some random events",
@@ -309,7 +319,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc:
+      thumbnail:
         "https://images.unsplash.com/photo-1515163842884-3c780ba91d1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1534&q=80",
       title: "Events",
       content: "Some random events",
@@ -321,7 +331,7 @@ const TABS = {
   ],
   studiolab: [
     {
-      imageSrc:
+      thumbnail:
         "https://cdn.pixabay.com/photo/2015/05/15/14/22/conference-room-768441_960_720.jpg",
       title: "Events",
       content: "Some random events",
@@ -331,7 +341,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2866.JPG",
+      thumbnail: "src/images/studiolab/_MG_2866.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -340,7 +350,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2867.JPG",
+      thumbnail: "src/images/studiolab/_MG_2867.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -349,7 +359,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2869.JPG",
+      thumbnail: "src/images/studiolab/_MG_2869.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -358,7 +368,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2871.JPG",
+      thumbnail: "src/images/studiolab/_MG_2871.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -367,7 +377,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2873.JPG",
+      thumbnail: "src/images/studiolab/_MG_2873.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -376,7 +386,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2874.JPG",
+      thumbnail: "src/images/studiolab/_MG_2874.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -385,7 +395,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2876.JPG",
+      thumbnail: "src/images/studiolab/_MG_2876.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -394,7 +404,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2877.JPG",
+      thumbnail: "src/images/studiolab/_MG_2877.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -403,7 +413,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2879.JPG",
+      thumbnail: "src/images/studiolab/_MG_2879.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -412,7 +422,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2881.JPG",
+      thumbnail: "src/images/studiolab/_MG_2881.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -421,7 +431,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2885.JPG",
+      thumbnail: "src/images/studiolab/_MG_2885.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -430,7 +440,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2886.JPG",
+      thumbnail: "src/images/studiolab/_MG_2886.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -439,7 +449,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2887.JPG",
+      thumbnail: "src/images/studiolab/_MG_2887.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -448,7 +458,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2890.JPG",
+      thumbnail: "src/images/studiolab/_MG_2890.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -457,7 +467,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2891.JPG",
+      thumbnail: "src/images/studiolab/_MG_2891.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -466,7 +476,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2892.JPG",
+      thumbnail: "src/images/studiolab/_MG_2892.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -475,7 +485,7 @@ const TABS = {
       url: " ",
     },
     {
-      imageSrc: "src/images/studiolab/_MG_2894.JPG",
+      thumbnail: "src/images/studiolab/_MG_2894.JPG",
       title: "Events",
       content: "Some random events",
       price: "$5.99",
@@ -489,7 +499,7 @@ const TABS = {
 export default ({
   heading = " ",
   tabs = {
-    News: TABS.News,
+    News: postlist,
     Events: getRandomCards(TABS.Events),
   },
 }) => {
@@ -500,6 +510,9 @@ export default ({
    */
   const tabsKeys = Object.keys(tabs);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
+  const shortenCardtitle = postlist.map((post) => {
+    return post.title.split(" ").slice(0, 7).join(" ") + "...";
+  });
   return (
     <Container>
       <ContentWithPaddingXl>
@@ -537,17 +550,17 @@ export default ({
             initial={activeTab === tabKey ? "current" : "hidden"}
             animate={activeTab === tabKey ? "current" : "hidden"}
           >
-            {tabs[tabKey].map((card, index) => (
+            {tabs[tabKey].map((post, index) => (
               <CardContainer key={index}>
                 <Card
                   className="group"
-                  href={card.url}
+                  href={post.url}
                   initial="rest"
                   whileHover="hover"
                   animate="rest"
                 >
-                  <Link to="/article">
-                    <CardImageContainer imageSrc={card.imageSrc}>
+                  <Link to={`/article/${post.id}`}>
+                    <CardImageContainer thumbnail={post.thumbnail}>
                       <CardHoverOverlay
                         variants={{
                           hover: {
@@ -566,9 +579,15 @@ export default ({
                     </CardImageContainer>
                   </Link>
                   <CardText>
-                    <CardTitle>{card.title}</CardTitle>
-                    <CardContent>{card.content}</CardContent>
+                    <CardTitle>{shortenCardtitle[index]}</CardTitle>
+                    <small>
+                      Published on {post.date} by {post.author}
+                    </small>
+                    {/* <CardContent>{card.content}</CardContent> */}
                     {/* <CardPrice>{card.price}</CardPrice> */}
+                    {/*  <small tw="hover:text-indigo-500">
+                      <Link className="links">Read more</Link>
+                    </small> */}
                   </CardText>
                 </Card>
               </CardContainer>
@@ -633,8 +652,8 @@ export const TwoLinesTabsGrid = ({
                   animate="rest"
                 >
                   <CardImageContainer
-                    imageSrc={card.imageSrc}
-                    onClick={() => setimgSRC(card.imageSrc)}
+                    thumbnail={card.thumbnail}
+                    onClick={() => setimgSRC(card.thumbnail)}
                   >
                     <CardHoverOverlay
                       variants={{

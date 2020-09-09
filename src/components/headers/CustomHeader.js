@@ -52,7 +52,7 @@ export default ({
         About
         <Dropdown>
           <NavDropdownContent href="about">Overview</NavDropdownContent>
-          <NavDropdownContent href="network">Networks</NavDropdownContent>
+          <NavDropdownContent href="/network">Networks</NavDropdownContent>
         </Dropdown>
       </NavLink>
       <NavLink href="newsandevents">News & Events</NavLink>
