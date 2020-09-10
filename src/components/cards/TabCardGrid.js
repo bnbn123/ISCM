@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //markdown
 // import Markdown from "react-markdown";
-import listofdata from "../../posts.json";
+import postlist from "../../posts.json";
 //styling
 import { motion } from "framer-motion";
 import tw from "twin.macro";
@@ -495,12 +495,10 @@ const TABS = {
   ],
 };
 
-const postList = listofdata.filter((post) => post.type === "post\r");
-console.log("postList", postList);
 export default ({
   heading = " ",
   tabs = {
-    News: postList,
+    News: postlist,
     Events: getRandomCards(TABS.Events),
   },
 }) => {
@@ -510,7 +508,7 @@ export default ({
    * To see what attributes are configurable of each object inside this array see the example above for "Starters".
    */
   const tabsKeys = Object.keys(tabs);
-  console.log("tabsKey", tabsKeys);
+  // console.log("tabsKey", tabsKeys);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
   const shortenCardtitle = postList.map((post) => {
     return post.title.split(" ").slice(0, 7).join(" ") + "...";

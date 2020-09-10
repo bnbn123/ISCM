@@ -1,52 +1,9 @@
 ---
-title: This is a Test
-author: Will Jay
-date: 2020-01-03T11:50:02.255Z
-thumbnail: /images/pumpbeerthumb.jpg
+title: The modernization of a country and it's inevitable needs for change
+author: Hẩn Quang Triền
+date: 2020-09-09T21:30:38.849Z
+thumbnail: /images/5e552d0482a8d87735122ec713e48697.jpg
 ---
-
-# This is just a test post
-
-_Let's see what happens._
-
-# Live demo
-
-Changes are automatically rendered as you type.
-
-## Table of Contents
-
-- Implements [GitHub Flavored Markdown](https://github.github.com/gfm/)
-- Renders actual, "native" React DOM elements
-- Allows you to escape or skip HTML (try toggling the checkboxes above)
-- If you escape or skip the HTML, no `dangerouslySetInnerHTML` is used! Yay!
-
-## HTML block below
-
-<blockquote>
-  This blockquote will change based on the HTML settings above.
-</blockquote>
-
-## How about some code?
-
-```js
-var React = require("react");
-var Markdown = require("react-markdown");
-
-React.render(
-  <Markdown source="# Your markdown here" />,
-  document.getElementById("content")
-);
-```
-
-Pretty neat, eh?
-
-## Tables?
-
-| Feature   | Support |
-| --------- | ------- |
-| tables    | ✔       |
-| alignment | ✔       |
-| wewt      | ✔       |
 
 ## More info?
 
@@ -65,6 +22,7 @@ They're using our own satellites against us. And the clock is ticking. Just my l
 # This is an image
 
 <img style="height:60vh; width:60%" src="https://images.unsplash.com/photo-1526721940322-10fb6e3ae94a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1502&q=80">
+
 This thing comes fully loaded. AM/FM radio, reclining bucket seats, and... power windows. Hey, you know how I'm, like, always trying to save the planet? Here's my chance. Eventually, you do plan to have dinosaurs on your dinosaur tour, right? Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.
 
 You're a very talented young man, with your own clever thoughts and ideas. Do you need a manager? Just my luck, no ice. Forget the fat lady! You're obsessed with the fat lady! Drive us out of here! Checkmate... I was part of something special. Yes, Yes, without the oops!
