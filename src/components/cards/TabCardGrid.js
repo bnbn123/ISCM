@@ -496,6 +496,7 @@ const TABS = {
 };
 
 const postList = listofdata.filter((post) => post.type === "post\r");
+console.log("postList", postList);
 export default ({
   heading = " ",
   tabs = {
@@ -509,6 +510,7 @@ export default ({
    * To see what attributes are configurable of each object inside this array see the example above for "Starters".
    */
   const tabsKeys = Object.keys(tabs);
+  console.log("tabsKey", tabsKeys);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
   const shortenCardtitle = postList.map((post) => {
     return post.title.split(" ").slice(0, 7).join(" ") + "...";

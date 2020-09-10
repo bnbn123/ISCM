@@ -19,6 +19,7 @@ export default (props) => {
       fetchedPost.date = post.date ? post.date : "No date given";
       fetchedPost.author = post.author ? post.author : "No author given";
       fetchedPost.content = post.content ? post.content : "No content given";
+      fetchedPost.type = post.type;
       postExists = true;
     }
   });
