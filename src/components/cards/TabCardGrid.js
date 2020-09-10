@@ -510,7 +510,7 @@ export default ({
   const tabsKeys = Object.keys(tabs);
   // console.log("tabsKey", tabsKeys);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
-  const shortenCardtitle = postList.map((post) => {
+  const shortenCardtitle = postlist.map((post) => {
     return post.title.split(" ").slice(0, 7).join(" ") + "...";
   });
   return (
