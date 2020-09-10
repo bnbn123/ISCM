@@ -64,7 +64,7 @@ export default ({
         <NavLink>News & Events</NavLink>
       </Link>
       <Link to="/studiolab">
-        <NavLink>Studio - Lab</NavLink>
+        <NavLink>StudioLab</NavLink>
       </Link>
       <Link to="/research-development">
         <NavLink>R&D</NavLink>

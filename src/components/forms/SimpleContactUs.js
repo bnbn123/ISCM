@@ -68,7 +68,16 @@ export default () => {
                   </InputContainer>
                 </Column>
                 <Column>
-                  <InputContainer tw="flex-1">
+                  <InputContainer>
+                    <Label htmlFor="phone-input">Your Phone Number</Label>
+                    <Input
+                      id="phone-input"
+                      type="phone"
+                      name="phone"
+                      placeholder="E.g. 08XXXXXXXXX"
+                    />
+                  </InputContainer>
+                  <InputContainer>
                     <Label htmlFor="name-input">Your Introduction</Label>
                     <TextArea
                       id="message-input"

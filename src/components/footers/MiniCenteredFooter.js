@@ -52,7 +52,7 @@ export default () => {
               <Links>R & D</Links>
             </Link>
             <Link to="/studiolab">
-              <Links>Studio-Lab</Links>
+              <Links>StudioLab</Links>
             </Link>
             <Link to="/education">
               <Links>Education</Links>

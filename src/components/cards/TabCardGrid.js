@@ -32,7 +32,6 @@ const TabControl = styled.div`
     ${tw`bg-gray-300 text-gray-700`}
   }
   ${(props) => props.active && tw`bg-primary-500! text-gray-100!`}
-  }
 `;
 
 const TabContent = tw(
