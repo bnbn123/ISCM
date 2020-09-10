@@ -73,7 +73,7 @@ export default () => {
                     <TextArea
                       id="message-input"
                       name="message"
-                      placeholder="E.g. Details about yourself"
+                      placeholder="E.g. Details about yourself and what programs you are interested in."
                     />
                   </InputContainer>
                 </Column>

@@ -4,6 +4,10 @@ backend:
 # These lines should *not* be indented
 media_folder: "public/images" # Media files will be stored in the repo under static/images/uploads
 public_folder: "/images" # The src attribute for uploaded media will begin with /images/uploads
+
+# /admin/config.yml
+publish_mode: editorial_workflow
+
 collections:
   - name: "posts" # Used in routes, e.g., /admin/collections/blog
     label: "Blog Posts" # Used in the UI
@@ -16,3 +20,10 @@ collections:
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Featured Image", name: "thumbnail", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+      - {
+          label: "type",
+          name: "type",
+          widget: "select",
+          options: ["post", "event", "paper"],
+          default: ["post"],
+        }

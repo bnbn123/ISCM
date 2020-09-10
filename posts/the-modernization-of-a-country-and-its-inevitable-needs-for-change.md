@@ -3,7 +3,9 @@ title: The modernization of a country and it's inevitable needs for change
 author: Hẩn Quang Triền
 date: 2020-09-09T21:30:38.849Z
 thumbnail: /images/5e552d0482a8d87735122ec713e48697.jpg
+type: post
 ---
+
 ## More info?
 
 Read usage information and more on [GitHub](//github.com/rexxars/react-markdown)

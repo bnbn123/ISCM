@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 //markdown
 // import Markdown from "react-markdown";
-import postlist from "../../posts.json";
+import listofdata from "../../posts.json";
 //styling
 import { motion } from "framer-motion";
 import tw from "twin.macro";
@@ -496,10 +496,11 @@ const TABS = {
   ],
 };
 
+const postList = listofdata.filter((post) => post.type === "post\r");
 export default ({
   heading = " ",
   tabs = {
-    News: postlist,
+    News: postList,
     Events: getRandomCards(TABS.Events),
   },
 }) => {
@@ -510,7 +511,7 @@ export default ({
    */
   const tabsKeys = Object.keys(tabs);
   const [activeTab, setActiveTab] = useState(tabsKeys[0]);
-  const shortenCardtitle = postlist.map((post) => {
+  const shortenCardtitle = postList.map((post) => {
     return post.title.split(" ").slice(0, 7).join(" ") + "...";
   });
   return (

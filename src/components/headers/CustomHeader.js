@@ -2,7 +2,8 @@ import React from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
 import { css } from "styled-components/macro"; //eslint-disable-line
-
+import { Link } from "react-router-dom";
+import { handleForm } from "../misc/Formhandle";
 import Header, {
   LogoLink,
   NavLinks,
@@ -48,40 +49,56 @@ const PaddingAndMargin = tw.div` mt-0 xl:pl-10 py-8`;
 export default ({
   navLinks = [
     <NavLinks key={1}>
-      <NavLink href="about">
-        About
-        <Dropdown>
-          <NavDropdownContent href="about">Overview</NavDropdownContent>
-          <NavDropdownContent href="/network">Networks</NavDropdownContent>
-        </Dropdown>
-      </NavLink>
-      <NavLink href="newsandevents">News & Events</NavLink>
-      <NavLink href="studiolab">Studio - Lab</NavLink>
-      <NavLink href="research-development">R&D</NavLink>
-      <NavLink tw="relative" href="people">
-        People
-        <Dropdown2>
-          <NavDropdownContent href="people">Our members</NavDropdownContent>
-          <NavDropdownContent href="collaborators">
-            Collaborators
-          </NavDropdownContent>
-        </Dropdown2>
-      </NavLink>
-      <NavLink tw="relative" href="education">
-        Education
-        <Dropdown3>
-          <NavDropdownContent href="undergrads">
-            Undergraduate
-          </NavDropdownContent>
-          <NavDropdownContent href="postgrads">
-            Post-graduate
-          </NavDropdownContent>
-          <NavDropdownContent href="shortcourses">
-            Short-courses
-          </NavDropdownContent>
-          <NavDropdownContent href="#form">Admission</NavDropdownContent>
-        </Dropdown3>
-      </NavLink>
+      <Link to="/about">
+        <NavLink>
+          About
+          <Dropdown>
+            <NavDropdownContent>Overview</NavDropdownContent>
+            <Link to="/network">
+              <NavDropdownContent>Networks</NavDropdownContent>
+            </Link>
+          </Dropdown>
+        </NavLink>
+      </Link>
+      <Link to="/newsandevents">
+        <NavLink>News & Events</NavLink>
+      </Link>
+      <Link to="/studiolab">
+        <NavLink>Studio - Lab</NavLink>
+      </Link>
+      <Link to="/research-development">
+        <NavLink>R&D</NavLink>
+      </Link>
+      <Link to="/people">
+        <NavLink tw="relative">
+          People
+          <Dropdown2>
+            <NavDropdownContent>Our members</NavDropdownContent>
+            <Link to="/collaborators">
+              <NavDropdownContent>Collaborators</NavDropdownContent>
+            </Link>
+          </Dropdown2>
+        </NavLink>
+      </Link>
+      <Link to="/education">
+        <NavLink tw="relative">
+          Education
+          <Dropdown3>
+            <Link to="/undergrads">
+              <NavDropdownContent>Undergraduate</NavDropdownContent>{" "}
+            </Link>
+            <Link to="/postgrads">
+              <NavDropdownContent>Post-graduate</NavDropdownContent>
+            </Link>
+            <Link to="/shortcourses">
+              <NavDropdownContent>Short-courses</NavDropdownContent>
+            </Link>
+            <Link onClick={handleForm}>
+              <NavDropdownContent>Admission</NavDropdownContent>
+            </Link>
+          </Dropdown3>
+        </NavLink>
+      </Link>
     </NavLinks>,
   ],
 }) => (
