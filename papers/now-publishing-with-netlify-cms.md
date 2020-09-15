@@ -3,6 +3,8 @@ title: Now Publishing With Netlify CMS!
 author: Will Jay
 date: 2020-01-05T07:18:52.042Z
 thumbnail: /images/netlifyicon.png
+description: My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Must go faster. God help us, we're in the hands of engineers. Yes, Yes, without the oops! God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.
+category: PAPER
 ---
 
 We're now publishing remotely. Calling on all who would like to contribute to my blog!

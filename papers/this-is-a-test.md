@@ -3,6 +3,8 @@ title: This is a Test
 author: Will Jay
 date: 2020-01-03T11:50:02.255Z
 thumbnail: /images/pumpbeerthumb.jpg
+description: My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Must go faster. God help us, we're in the hands of engineers. Yes, Yes, without the oops! God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.
+category: PAPER
 ---
 
 # This is just a test post

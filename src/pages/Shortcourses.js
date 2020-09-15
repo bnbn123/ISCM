@@ -17,7 +17,7 @@ export default () => {
         subheading={<Subheading>Short-limited time course</Subheading>}
         heading="THIS IS THE FULLNAME OF THE COURSE"
         buttonRounded={false}
-        primaryButtonUrl="/article"
+        primaryButtonUrl=" "
         primaryButtonText="Learn more"
         imageSrc="https://images.unsplash.com/photo-1550202256-47e53ffabc95?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
         textOnLeft={false}
@@ -26,7 +26,7 @@ export default () => {
         subheading={<Subheading>Short-limited time course</Subheading>}
         heading="THIS IS THE FULLNAME OF THE COURSE"
         buttonRounded={false}
-        primaryButtonUrl="/article"
+        primaryButtonUrl=" "
         primaryButtonText="Learn more"
         imageSrc="https://images.unsplash.com/photo-1535982330050-f1c2fb79ff78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
         textOnLeft={false}

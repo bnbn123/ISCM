@@ -16,7 +16,7 @@ const HeadingDescription = tw.p`mt-4 font-medium text-gray-600 text-center max-w
 
 const Content = styled.div(({ withflex }) => [
   tw`mt-16`,
-  withflex ? tw`flex flex-col justify-center items-center` : "",
+  withflex ? tw`flex flex-row justify-center items-center` : "",
 ]);
 
 const Text = styled.div`
@@ -50,11 +50,11 @@ const Card = styled.div((props) => [
 ]);
 const Image = styled.div((props) => [
   `background-image: url("${props.imageSrc}");`,
-  tw`flex justify-center items-center rounded md:w-full overflow-hidden flex-shrink-0 h-80 md:h-144 bg-cover bg-center mx-4 sm:mx-8 md:mx-4 lg:mx-8`,
+  tw`flex justify-center items-center md:w-full overflow-hidden flex-shrink-0 h-80 md:h-144 bg-cover bg-center mx-4 sm:mx-8 md:mx-4 lg:mx-8`,
 ]);
 
 const Details = tw.div`flex flex-col justify-center items-center bg-gray-100 bg-opacity-75 sm:h-full lg:h-3/4 md:mt-2 md:max-w-md mx-4 sm:mx-0 text-center`;
-const Subtitle = tw.div`sm:text-xs md:text-base font-bold tracking-wide text-indigo-700`;
+const Subtitle = tw.div`sm:text-xs md:text-base font-bold tracking-wide text-primary-700`;
 const Title = tw.h4`sm:text-base md:text-3xl font-bold text-gray-900`;
 const Description = tw.p`sm:text-xs mt-2 md:text-sm leading-loose`;
 const Link = tw.a`inline-block mt-4 md:text-sm text-primary-500 font-bold cursor-pointer transition duration-300 border-b-2 border-transparent hover:border-primary-500`;

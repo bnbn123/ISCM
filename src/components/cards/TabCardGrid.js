@@ -2,6 +2,7 @@ import React, { useState } from "react";
 //markdown
 // import Markdown from "react-markdown";
 import postlist from "../../posts.json";
+import eventlist from "../../events.json";
 //styling
 import { motion } from "framer-motion";
 import tw from "twin.macro";
@@ -31,7 +32,7 @@ const TabControl = styled.div`
   &:hover {
     ${tw`bg-gray-300 text-gray-700`}
   }
-  ${(props) => props.active && tw`bg-primary-500! text-gray-100!`}
+  ${(props) => props.active && tw`bg-primary-700! text-gray-100!`}
 `;
 
 const TabContent = tw(
@@ -75,7 +76,7 @@ const StyledModal = styled(ReactModalAdapter)`
     }
   }
   &.mainHeroModal__content {
-    ${tw`xl:mx-auto m-4 sm:m-16 max-w-screen-xl absolute inset-0 flex justify-center items-center bg-indigo-600 outline-none`}
+    ${tw`xl:mx-auto m-4 sm:m-16 max-w-screen-xl absolute inset-0 flex justify-center items-center bg-primary-700 outline-none`}
   }
   .content {
     ${tw`w-full lg:p-16`}
@@ -499,7 +500,7 @@ export default ({
   heading = " ",
   tabs = {
     News: postlist,
-    Events: getRandomCards(TABS.Events),
+    Events: eventlist,
   },
 }) => {
   /*
@@ -579,7 +580,9 @@ export default ({
                     </CardImageContainer>
                   </Link>
                   <CardText>
-                    <CardTitle>{shortenCardtitle[index]}</CardTitle>
+                    <Link to={`/article/${post.id}`}>
+                      <CardTitle>{shortenCardtitle[index]}</CardTitle>
+                    </Link>
                     <small>
                       Published on {post.date} by {post.author}
                     </small>
@@ -602,11 +605,6 @@ export default ({
 };
 
 /* This function is only there for demo purposes. It populates placeholder cards */
-const getRandomCards = (Events) => {
-  // Shuffle array
-  return Events.sort(() => Math.random() - 0.5);
-};
-
 export const TwoLinesTabsGrid = ({
   heading = " ",
   tabs = {

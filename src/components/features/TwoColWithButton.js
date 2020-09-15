@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import tw from "twin.macro";
 import styled from "styled-components";
 import {
@@ -84,13 +85,25 @@ export default ({
             <Heading>{heading}</Heading>
             <Subheading>{subheading}</Subheading>
             <Description>{description}</Description>
-            <PrimaryButton
-              buttonRounded={buttonRounded}
-              as="a"
-              onClick={handleForm}
-            >
-              {primaryButtonText}
-            </PrimaryButton>
+            {primaryButtonUrl !== " " ? (
+              <Link to={`/${primaryButtonUrl}`}>
+                <PrimaryButton
+                  buttonRounded={buttonRounded}
+                  as="a"
+                  onClick={handleForm}
+                >
+                  {primaryButtonText}
+                </PrimaryButton>
+              </Link>
+            ) : (
+              <PrimaryButton
+                buttonRounded={buttonRounded}
+                as="a"
+                onClick={handleForm}
+              >
+                {primaryButtonText}
+              </PrimaryButton>
+            )}
           </TextContent>
         </TextColumn>
       </TwoColumn>

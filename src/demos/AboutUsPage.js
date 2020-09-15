@@ -24,7 +24,7 @@ export default () => {
         subheading="We are a modern team of young reaschers."
         buttonRounded={false}
         primaryButtonText="Meet The Team"
-        primaryButtonUrl="/people"
+        primaryButtonUrl="people"
         imageSrc="https://cdn.pixabay.com/photo/2015/01/09/11/09/startup-594091_960_720.jpg"
       />
       <MainFeature1
@@ -32,7 +32,7 @@ export default () => {
         subheading="We aim to excel in research and development."
         buttonRounded={false}
         primaryButtonText="Our Projects"
-        primaryButtonUrl="/research-development"
+        primaryButtonUrl="research-development"
         imageSrc="https://cdn.pixabay.com/photo/2016/11/29/09/32/concept-1868728_960_720.jpg"
         textOnLeft={false}
       />

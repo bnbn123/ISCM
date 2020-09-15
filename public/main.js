@@ -216,7 +216,9 @@ const getPapers = () => {
         };
         const lines = contents.split("\n");
         const metadataIndices = lines.reduce(getMetadataIndices, []);
+        // console.log(metadataIndices);
         const metadata = parseMetadata({ lines, metadataIndices });
+        // console.log(metadata);
         const content = parseContent({ lines, metadataIndices });
         const parsedDate = metadata.date
           ? formatDate(metadata.date)
@@ -232,12 +234,16 @@ const getPapers = () => {
           date: publishedDate ? publishedDate : "No date given",
           time: parsedDate["time"],
           thumbnail: metadata.thumbnail,
+          description: metadata.description,
+          category: metadata.category,
           content: content ? content : "No content given",
         };
         paperslist.push(post);
         ilist.push(i);
+        // console.log(paperslist);
+        //SORTING BY NEWEST
         if (ilist.length === files.length) {
-          const sortedList = postlist.sort((a, b) => {
+          const sortedList = paperslist.sort((a, b) => {
             return a.id < b.id ? 1 : -1;
           });
           let data = JSON.stringify(sortedList);

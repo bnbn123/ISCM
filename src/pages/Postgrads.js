@@ -16,7 +16,7 @@ export default () => {
       <MainFeature1
         subheading={<Subheading>PHD/MASTER PROGRAMS</Subheading>}
         heading="THIS IS THE FULLNAME FOR PROGRAMS"
-        primaryButtonUrl="/article"
+        primaryButtonUrl=" "
         buttonRounded={false}
         primaryButtonText="Learn more"
         imageSrc="https://images.unsplash.com/photo-1525921429624-479b6a26d84d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"
@@ -24,7 +24,7 @@ export default () => {
       <MainFeature1
         subheading={<Subheading>PHD/MASTER PROGRAMS</Subheading>}
         heading="THIS IS THE FULLNAME FOR PROGRAMS"
-        primaryButtonUrl="/article"
+        primaryButtonUrl=" "
         buttonRounded={false}
         primaryButtonText="Learn more "
         imageSrc="https://images.unsplash.com/photo-1496469888073-80de7e952517?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80"

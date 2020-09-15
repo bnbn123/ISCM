@@ -6,7 +6,7 @@ export default function RandDPage() {
   return (
     <AnimationRevealPage>
       <Hero heading1="Research" heading2="And Development" />
-      <Blogposts />
+      <Blogposts headingText="Our researchs" />
     </AnimationRevealPage>
   );
 }

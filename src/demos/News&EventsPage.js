@@ -6,7 +6,7 @@ import Hero from "components/hero/TwoColumnWithVideo.js";
 import TabGrid from "components/cards/TabCardGrid.js";
 
 export default () => {
-  const HighlightedText = tw.span`bg-primary-500 text-gray-100 px-4 transform -skew-x-12 inline-block`;
+  const HighlightedText = tw.span`bg-primary-800 text-gray-100 px-4 transform -skew-x-12 inline-block`;
   const imageCss = tw`rounded-4xl`;
   return (
     <AnimationRevealPage>
@@ -21,7 +21,7 @@ export default () => {
         imageCss={imageCss}
         imageDecoratorBlob={true}
         primaryButtonText="Register"
-        primaryButtonUrl="#form"
+        primaryButtonUrl=" "
         watchVideoButtonText="Have a look"
       />
 

@@ -3,6 +3,8 @@ title: The modernization of a country and it's inevitable needs for change
 author: Hẩn Quang Triền
 date: 2020-09-09T21:30:38.849Z
 thumbnail: /images/5e552d0482a8d87735122ec713e48697.jpg
+description: My dad once told me, laugh and the world laughs with you, Cry, and I'll give you something to cry about you little bastard! Must go faster. God help us, we're in the hands of engineers. Yes, Yes, without the oops! God creates dinosaurs. God destroys dinosaurs. God creates Man. Man destroys God. Man creates Dinosaurs.
+category: RESEARCH
 ---
 
 ## More info?

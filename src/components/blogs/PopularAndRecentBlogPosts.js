@@ -4,27 +4,30 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { css } from "styled-components/macro"; //eslint-disable-line
 import { SectionHeading } from "components/misc/Headings.js";
-import { Container, ContentWithPaddingXl } from "components/misc/Layouts.js";
+import { Container } from "components/misc/Layouts.js";
+import postslist from "../../posts.json";
+import eventslist from "../../events.json";
+import { Link } from "react-router-dom";
 
-const Row = tw.div`flex flex-col lg:flex-row -mb-10`;
+const Row = tw.div`flex flex-col lg:flex-row -mb-10 h-full`;
 const Heading = tw(SectionHeading)`text-left lg:text-4xl xl:text-5xl`;
 
-const PopularPostsContainer = tw.div`lg:w-2/3`;
-const PostsContainer = tw.div`mt-12 flex flex-col sm:flex-row sm:justify-between lg:justify-start`;
 const Post = tw(
   motion.a
 )`block sm:max-w-sm cursor-pointer mb-16 last:mb-0 sm:mb-0 sm:odd:mr-8 lg:mr-8 xl:mr-16`;
+
+const PostsContainer = tw.div`mt-12 flex flex-col sm:flex-row sm:justify-between lg:justify-start`;
 const Image = styled(motion.div)((props) => [
   `background-image: url("${props.imageSrc}");`,
   tw`h-64 bg-cover bg-center rounded`,
 ]);
 const Title = tw.h5`mt-6 text-xl font-bold transition duration-300 group-hover:text-primary-500`;
 const Description = tw.p`mt-2 font-medium text-secondary-100 leading-loose text-sm`;
-const AuthorInfo = tw.div`mt-6 flex items-center`;
-const AuthorImage = tw.img`w-12 h-12 rounded-full`;
+const AuthorInfo = tw.div`align-bottom mt-6 flex items-center`;
+// const AuthorImage = tw.img`w-12 h-12 rounded-full`;
 const AuthorNameAndProfession = tw.div`ml-4`;
 const AuthorName = tw.h6`font-semibold text-lg`;
-const AuthorProfile = tw.p`text-secondary-100 text-sm`;
+// const AuthorProfile = tw.p`text-secondary-100 text-sm`;
 
 const RecentPostsContainer = styled.div`
   ${tw`mt-24 lg:mt-0 lg:w-1/3`}
@@ -35,13 +38,25 @@ const RecentPostsContainer = styled.div`
     ${tw`flex justify-between mb-10 max-w-none w-full sm:w-1/2 lg:w-auto sm:odd:pr-12 lg:odd:pr-0 mr-0`}
   }
   ${Title} {
-    ${tw`text-base xl:text-lg mt-0 mr-4 lg:max-w-xs`}
+    ${tw`h-2/3 text-base xl:text-lg mt-0 mr-4 lg:max-w-xs`}
   }
   ${AuthorName} {
     ${tw`mt-3 text-sm text-secondary-100 font-normal leading-none`}
   }
   ${Image} {
     ${tw`h-20 w-20 flex-shrink-0`}
+  }
+`;
+const PopularPostsContainer = styled.div`
+  ${tw`lg:w-2/3`}
+  ${Post} {
+    ${tw`flex flex-col h-full`}
+    ${Title} {
+      ${tw`h-1/3`}
+    }
+    ${Description} {
+      ${tw`flex-grow`}
+    }
   }
 `;
 const PostTextContainer = tw.div``;
@@ -58,7 +73,10 @@ export default () => {
   };
 
   //Recommended: Only 2 Items
-  const popularPosts = [
+  const popularPosts = postslist.slice(
+    0,
+    2
+  ); /* [
     {
       postImageSrc:
         "https://images.unsplash.com/photo-1521587760476-6c12a4b040da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
@@ -83,9 +101,12 @@ export default () => {
       authorProfile: "Another sleep deprived person but male",
       url: "https://reddit.com",
     },
-  ];
+  ]; */
 
-  const recentPosts = [
+  const recentPosts = eventslist.slice(
+    0,
+    5
+  ); /* [
     {
       postImageSrc:
         "https://images.unsplash.com/photo-1501503069356-3c6b82a17d89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80",
@@ -121,16 +142,17 @@ export default () => {
       authorName: "Naomi Watts",
       url: "https://timerse.com",
     },
-  ];
+  ]; */
 
   return (
     <Container>
-      <ContentWithPaddingXl>
-        <Row>
-          <PopularPostsContainer>
-            <Heading>Popular Events</Heading>
-            <PostsContainer>
-              {popularPosts.map((post, index) => (
+      {/* <ContentWithPaddingXl> */}
+      <Row tw="pb-24">
+        <PopularPostsContainer>
+          <Heading>Popular Events</Heading>
+          <PostsContainer>
+            {popularPosts.map((post, index) => (
+              <Link to={`/article/${post.id}`}>
                 <Post
                   key={index}
                   href="/article"
@@ -142,37 +164,47 @@ export default () => {
                   <Image
                     transition={{ duration: 0.3 }}
                     variants={postBackgroundSizeAnimation}
-                    imageSrc={post.postImageSrc}
+                    imageSrc={post.thumbnail}
                   />
-                  <Title>{post.title}</Title>
+                  <Link to={`/article/${post.id}`}>
+                    <Title>{post.title}</Title>
+                  </Link>
                   <Description>{post.description}</Description>
                   <AuthorInfo>
-                    <AuthorImage src={post.authorImageSrc} />
+                    {/* <AuthorImage src={post.authorImageSrc} /> */}
                     <AuthorNameAndProfession>
-                      <AuthorName>{post.authorName}</AuthorName>
-                      <AuthorProfile>{post.authorProfile}</AuthorProfile>
+                      <AuthorName>
+                        {post.author}
+                        <small>on {post.date}</small>
+                      </AuthorName>
+                      {/* <AuthorProfile>{post.authorProfile}</AuthorProfile> */}
                     </AuthorNameAndProfession>
                   </AuthorInfo>
                 </Post>
-              ))}
-            </PostsContainer>
-          </PopularPostsContainer>
-          <RecentPostsContainer>
-            <Heading>Recent Events</Heading>
-            <PostsContainer>
-              {recentPosts.map((post, index) => (
+              </Link>
+            ))}
+          </PostsContainer>
+        </PopularPostsContainer>
+        <RecentPostsContainer>
+          <Heading>Recent Posts</Heading>
+          <PostsContainer>
+            {recentPosts.map((post, index) => (
+              <Link to={`/article/${post.id}`}>
                 <Post key={index} href="/article" className="group">
                   <PostTextContainer>
-                    <Title>{post.title}</Title>
-                    <AuthorName>{post.authorName}</AuthorName>
+                    <Link to={`/article/${post.id}`}>
+                      <Title>{post.title}</Title>
+                    </Link>
+                    <AuthorName>{post.author}</AuthorName>
                   </PostTextContainer>
-                  <Image imageSrc={post.postImageSrc} />
+                  <Image imageSrc={post.thumbnail} />
                 </Post>
-              ))}
-            </PostsContainer>
-          </RecentPostsContainer>
-        </Row>
-      </ContentWithPaddingXl>
+              </Link>
+            ))}
+          </PostsContainer>
+        </RecentPostsContainer>
+      </Row>
+      {/* </ContentWithPaddingXl> */}
     </Container>
   );
 };

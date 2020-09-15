@@ -18,13 +18,13 @@ export default () => {
         heading="Bachelor programs fullname here"
         buttonRounded={false}
         primaryButtonText="Learn more"
-        primaryButtonUrl="/article"
+        primaryButtonUrl=" "
         imageSrc="https://images.unsplash.com/photo-1546953304-5d96f43c2e94?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1401&q=80"
       />
       <MainFeature1
         subheading={<Subheading>bachelor programs</Subheading>}
         heading="Bachelor programs fullname here"
-        primaryButtonUrl="/article"
+        primaryButtonUrl=" "
         buttonRounded={false}
         primaryButtonText="Learn more "
         imageSrc="https://images.unsplash.com/photo-1550867428-138aec9fce23?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80"
