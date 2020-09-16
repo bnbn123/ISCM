@@ -1,7 +1,7 @@
 ---
 title: This is a new research paper
 author: Hiển
-date: 2020-09-16T08:09:41.693Z
+date: 2020-09-16T08:42:47.577Z
 thumbnail: /images/5e552d0482a8d87735122ec713e48697.jpg
 description: You know what? It is beets. I've crashed into a beet truck. God
   help us, we're in the hands of engineers. Yeah, but John, if The Pirates of
