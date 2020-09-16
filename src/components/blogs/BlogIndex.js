@@ -25,7 +25,7 @@ const Heading = tw(SectionHeading)`text-gray-900`;
 const SubHeading = tw(Subheading)`text-2xl`;
 const Posts = tw.div`mt-6 sm:-mr-8 flex flex-wrap`;
 const PostContainer = styled.div`
-  ${tw`mt-10 w-full sm:w-1/2 lg:w-1/3 sm:pr-8`}
+  ${tw`h-full mt-10 w-full sm:w-1/2 lg:w-1/3 sm:pr-8`}
   ${(props) =>
     props.featured &&
     css`
