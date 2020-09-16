@@ -25,7 +25,7 @@ const Heading = tw(SectionHeading)`text-gray-900`;
 const SubHeading = tw(Subheading)`text-2xl`;
 const Posts = tw.div`mt-6 sm:-mr-8 flex flex-wrap`;
 const PostContainer = styled.div`
-  ${tw`h-full mt-10 w-full sm:w-1/2 lg:w-1/3 sm:pr-8`}
+  ${tw`mt-10 w-full sm:w-1/2 lg:w-1/3 sm:pr-8`}
   ${(props) =>
     props.featured &&
     css`
@@ -67,7 +67,7 @@ const Subinfo = styled.div`
 const Category = tw.div`uppercase text-primary-500 text-xs font-bold tracking-widest leading-loose after:content after:block after:border-b-2 after:border-primary-500 after:w-8`;
 const CreationDate = tw.div`mt-4 uppercase text-gray-600 italic font-semibold text-xs`;
 const Title = tw.div`h-1/3 mt-1 font-black text-xl text-gray-900 group-hover:text-primary-500 transition duration-300`;
-const Description = tw.div`overflow-hidden flex-grow`;
+const Description = tw.div`flex-grow`;
 const Author = tw.p`mt-4 font-medium text-gray-600 text-right max-w-sm `;
 
 const ButtonContainer = tw.div`flex justify-center`;
@@ -117,6 +117,9 @@ export default ({
   const shortenDescription = paperlist.map((post) => {
     return post.description.split(" ").slice(0, 30).join(" ") + "...";
   });
+  const featuredDescription = paperlist.map((post) => {
+    return post.description.split(" ").slice(0, 50).join(" ") + "...";
+  });
   const shortenCardtitle = paperlist.map((post) => {
     return post.title.split(" ").slice(0, 10).join(" ") + "...";
   });
@@ -132,7 +135,7 @@ export default ({
             {posts.slice(0, visible).map((post, index) => (
               <PostContainer key={index} featured={post.featured}>
                 {console.log(posts)}
-                <Link to={`/article/${post.id}`}>
+                <Link to={`/article/papers/${post.id}`}>
                   <Post className="group" as="a" href={post.url}>
                     <Image imageSrc={post.thumbnail} />
                     <Info>
@@ -140,10 +143,14 @@ export default ({
                         <Category>{post.category}</Category>
                         <CreationDate>{post.date}</CreationDate>
                       </Subinfo>
-                      <Link to={`/article/${post.id}`}>
+                      <Link to={`/article/papers/${post.id}`}>
                         <Title>{shortenCardtitle[index]}</Title>
                       </Link>
-                      <Description>{shortenDescription[index]}</Description>
+                      <Description>
+                        {post.featured
+                          ? featuredDescription[index]
+                          : shortenDescription[index]}
+                      </Description>
                       <Author>by {post.author} </Author>
                     </Info>
                   </Post>
@@ -220,8 +227,8 @@ export const HomepageResearchs = ({
         <Posts>
           {posts.slice(0, 3).map((post, index) => (
             <PostContainer key={index}>
-              {console.log(posts)}
-              <Link to={`/article/${post.id}`}>
+              {/* {console.log(posts)} */}
+              <Link to={`/article/papers/${post.id}`}>
                 <Post className="group" as="a" href={post.url}>
                   <Image imageSrc={post.thumbnail} />
                   <Info>
@@ -229,9 +236,10 @@ export const HomepageResearchs = ({
                       <Category>{post.category}</Category>
                       <CreationDate>{post.date}</CreationDate>
                     </Subinfo>
-                    <Link to={`/article/${post.id}`}>
+                    <Link to={`/article/papers/${post.id}`}>
                       <Title>{shortenCardtitle[index]}</Title>
                     </Link>
+                    {console.log(shortenDescription)}
                     <Description>{shortenDescription[index]}</Description>
                     <Author>by {post.author} </Author>
                   </Info>

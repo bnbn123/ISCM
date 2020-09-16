@@ -560,7 +560,13 @@ export default ({
                   whileHover="hover"
                   animate="rest"
                 >
-                  <Link to={`/article/${post.id}`}>
+                  <Link
+                    to={`/article/${
+                      activeTab.toLowerCase() === "events"
+                        ? `events/${post.id}`
+                        : `${post.id}`
+                    }`}
+                  >
                     <CardImageContainer thumbnail={post.thumbnail}>
                       <CardHoverOverlay
                         variants={{
@@ -580,7 +586,13 @@ export default ({
                     </CardImageContainer>
                   </Link>
                   <CardText>
-                    <Link to={`/article/${post.id}`}>
+                    <Link
+                      to={`/article/${
+                        activeTab.toLowerCase() === "events"
+                          ? `events/${post.id}`
+                          : `${post.id}`
+                      }`}
+                    >
                       <CardTitle>{shortenCardtitle[index]}</CardTitle>
                     </Link>
                     <small>

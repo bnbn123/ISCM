@@ -152,7 +152,7 @@ export default () => {
           <Heading>Popular Events</Heading>
           <PostsContainer>
             {popularPosts.map((post, index) => (
-              <Link to={`/article/${post.id}`}>
+              <Link to={`/article/events/${post.id}`}>
                 <Post
                   key={index}
                   href="/article"
@@ -166,7 +166,7 @@ export default () => {
                     variants={postBackgroundSizeAnimation}
                     imageSrc={post.thumbnail}
                   />
-                  <Link to={`/article/${post.id}`}>
+                  <Link to={`/article/events/${post.id}`}>
                     <Title>{post.title}</Title>
                   </Link>
                   <Description>{post.description}</Description>
@@ -175,7 +175,7 @@ export default () => {
                     <AuthorNameAndProfession>
                       <AuthorName>
                         {post.author}
-                        <small>on {post.date}</small>
+                        <small tw="text-gray-500">on {post.date}</small>
                       </AuthorName>
                       {/* <AuthorProfile>{post.authorProfile}</AuthorProfile> */}
                     </AuthorNameAndProfession>

@@ -22,6 +22,7 @@ import CollabPage from "pages/Collaborators";
 import Undergrads from "pages/Undergrads";
 import Postgrads from "pages/Postgrads";
 import Shortcourses from "pages/Shortcourses";
+import { eventsPosts as Events, paperPosts as Papers } from "pages/Article";
 import Article from "pages/Article";
 import ScrollToTop from "components/misc/ScrollTop";
 import Notfound from "pages/Notfound.js";
@@ -77,6 +78,16 @@ export default function App() {
             exact
             path="/article/:id"
             render={(props) => <Article {...props} />}
+          ></Route>
+          <Route
+            exact
+            path="/article/events/:id"
+            render={(props) => <Events {...props} />}
+          ></Route>
+          <Route
+            exact
+            path="/article/papers/:id"
+            render={(props) => <Papers {...props} />}
           ></Route>
         </Switch>
         <ContactForm />

@@ -1,5 +1,5 @@
 ---
-title: This is a Test
+title: This is a Test That Can Help You In MAny Ways
 author: Will Jay
 date: 2020-01-03T11:50:02.255Z
 thumbnail: /images/pumpbeerthumb.jpg

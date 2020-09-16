@@ -3,12 +3,11 @@ title: This is a new research paper
 author: Hiển
 date: 2020-09-16T08:42:47.577Z
 thumbnail: /images/5e552d0482a8d87735122ec713e48697.jpg
-description: You know what? It is beets. I've crashed into a beet truck. God
-  help us, we're in the hands of engineers. Yeah, but John, if The Pirates of
-  the Caribbean breaks down, the pirates don’t eat the tourists.
+description: You know what? It is beets. I've crashed into a beet truck. God help us, we're in the hands of engineers. Yeah, but John, if The Pirates of the Caribbean breaks down, the pirates don’t eat the tourists.
 category: PAPER
 ---
-# So you two dig up, dig up dinosaurs? 
+
+# So you two dig up, dig up dinosaurs?
 
 We gotta burn the rain forest, dump toxic waste, pollute the air, and rip up the OZONE! 'Cause maybe if we screw up this planet enough, they won't want it anymore! Yes, Yes, without the oops! Must go faster. God help us, we're in the hands of engineers.
 
